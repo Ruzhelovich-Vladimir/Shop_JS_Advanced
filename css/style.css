@@ -1,0 +1,186 @@
+body{
+    font-family: 'SF Pro Display', sans-serif;
+}
+header{
+    display: flex;
+    background-color: #2f2a2d;
+    justify-content: space-between;
+    color: #fafafa;
+    padding: 30px 80px;
+
+}
+menu{
+  position: absolute; /* блок занимает ширину содержимого, max-width её ограничивает */
+  top: 0; /* прикрепить к верху родителя */
+  right: 0
+}
+button{
+    outline: none;
+}
+.logo{
+
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.btn-cart{
+    background-color: #fafafa;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    color: #2f2a2d;
+    border-radius: 5px;
+    transition: all ease-in-out .4s;
+    cursor: pointer;
+}
+.btn-cart:hover{
+    background-color: transparent;
+    border-color: #fafafa;
+    color: #fafafa;
+}
+.btn-cart, .logo{
+    align-self: center;
+}
+.products{
+    column-gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-template-rows: 1fr;
+    padding: 40px 80px;
+    justify-content: space-between;
+}
+p {
+    margin: 0 0 5px 0;
+}
+.product-item{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+img {
+    max-width: 100%;
+    height: auto
+}
+.desc {
+    border: 1px solid #c0c0c040;
+    padding: 15px
+}
+.buy-btn{
+    margin-top: 5px;
+    background-color: #2f2a2d;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    color: #fafafa;
+    border-radius: 5px;
+    transition: all ease-in-out .4s;
+    cursor: pointer;
+}
+.buy-btn:hover{
+    background-color: transparent;
+    border-color: #2f2a2d;
+    color: #2f2a2d;
+}
+.back, .iw-modal-btn {
+	background:#013C74;
+	color:#fff;
+	text-align:center;
+	display:inline-block;
+	padding:10px 20px;
+	text-decoration:none;
+	font-size:17px;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	
+}
+
+.back:hover, .iw-modal-btn:hover {
+	 -webkit-transform: scale(1.1);
+	 -moz-transform: scale(1.1);
+	 -o-transform: scale(1.1);
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	background:#439DE0;
+}
+
+/********Модальное окно************/
+  
+/*CSS-свойства для заднего фона модального окна*/
+.iw-modal {
+	opacity: 0; /*изначально этот блок должен быть прозрачным*/ 
+	background: rgba(0,0,0,0.7); /*задаём цвет фона*/
+	pointer-events: none; /*делаем чтобы по элементу нельзя было кликнуть когда он прозрачный*/
+ 	position: fixed; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+	transition: all 0.5s ease;
+    margin: 0;
+    padding: 0;
+}
+
+.iw-modal:target {
+    opacity: 1; /*при клике окно становится видимым*/
+	pointer-events: auto; /*теперь по окну можно кликать мышкой*/
+    overflow-y: auto; /*прокрутка по вертикли страницы*/
+}
+
+.iw-modal-wrapper {
+    margin-top:10vh; /*отступ сверху можно задавать в px, % или vh*/
+    margin-left:100vh; /*отступ сверху можно задавать в px, % или vh*/
+}
+
+/*CSS-свойства для блока, содержащего контент модального окна */ 
+.iw-CSS-modal-inner {
+    position: relative;
+    background: #fff; /*цвет фона*/
+    border: 1px solid #ccc; /*цвет и толщина рамки*/
+    border-radius: 0px; /*радиус скругления углов*/
+
+}
+
+/*CSS-свойства заголовка модального окна */
+.iw-modal-header {
+    padding: 15px;/*внутренний отступ*/
+    background:#f1f1f1;/*цвет фона*/
+	position:relative;
+}
+.iw-modal-title {
+	font-size: 18px; /*размер шрифта*/
+	color:#555; /*цвет шрифта*/
+	font-weight:bold; /*жирность шрифта*/
+    line-height: 1.5; /*высота строки*/
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/*CSS для кнопки закрытия окна*/
+.iw-close {
+    position:absolute;
+	top:15px; /*отступ сверху*/
+	right:10px; /*отступ справа*/
+    font-size: 24px; /*размер шрифта*/
+    color: #555; /*цвет шрифта*/
+    text-decoration: none;
+}
+
+.iw-close:hover, .iw-close:focus {
+    color: #000; /*цвет шрифта при наведении*/
+    cursor: pointer;
+}
+
+/*CSS для блока с текстом модального окна*/
+
+.iw-modal-text {
+  padding: 15px 20px; /*внутренний отступ*/
+}
+
+/**MEDIA**/
+@media (min-width: 550px) {
+  .iw-modal-wrapper {
+      max-width: 700px;
+   }
